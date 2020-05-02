@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { SiderbarComponent } from './components/siderbar/siderbar.component';
-import { ContatctDetailsComponent } from './components/contatct-details/contatct-details.component';
+import { ContactDetailsComponent } from './components/contatct-details/contact-details.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +13,7 @@ import { ContatctDetailsComponent } from './components/contatct-details/contatct
     HeaderComponent,
     HomeComponent,
     SiderbarComponent,
-    ContatctDetailsComponent
+    ContactDetailsComponent
   ],
   imports: [
     BrowserModule
