@@ -1,0 +1,30 @@
+{
+  "contacts": [
+    {
+      "id": 1,
+      "firstName": "Jan",
+      "lastName": "Kowalski",
+      "email": "jan@kowalski.pl",
+      "phone": "123-456-789",
+      "city": "New York",
+      "state": "New YOrk",
+      "country:": "USA",
+      "gender": "Male",
+      "dob": "1974-01-01",
+      "img": "https://image.freepik.com/darmowe-wektory/awatar-postaci-biznesmen-na-bialym-tle_24877-60111.jpg"
+    },
+    {
+      "id": 2,
+      "firstName": "Annna",
+      "lastName": "Maria",
+      "email": "maria@kowalski.pl",
+      "phone": "123-123-789",
+      "city": "Warszawa",
+      "state": "Mazowieckie",
+      "country:": "POland",
+      "gender": "Male",
+      "dob": "1984-01-01",
+      "img": "https://image.freepik.com/darmowe-wektory/portret-silnej-pieknej-kobiety-w-profilu-z-blond-wlosami_102172-425.jpg"
+    }
+  ]
+}

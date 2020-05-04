@@ -1,8 +1,7 @@
 <div class="row">
   <div class="col"> Firstname</div>
   <div class="col">
-    {{contact.gender=== "Male" ? 'Mr' : 'Ms'}}
-    {{contact.firstname}}</div>
+       {{contact|fullname}} </div>
 </div>
 
 <div class="row">
@@ -11,7 +10,8 @@
 </div>
 <div class="row">
   <div class="col">img</div>
-  <div class="col">{{contact.img}}</div>
+  <div class="col">
+    <img [src]="contact.img" style="width:100px"> </div>
 </div>
 <div class="row">
   <div class="col">E mail adress</div>
