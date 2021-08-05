@@ -5,7 +5,6 @@
   <div class="col-sm-8">
     {{contact|fullname}} </div>
 </div>
-
 <div class="row m-2">
   <div class="col-sm-4">Lastname</div>
   <div class="col-sm-8">{{contact.lastname}}</div>
@@ -19,7 +18,6 @@
   <div class="col-sm-4">E mail adress</div>
   <div class="col-sm-8">{{contact.email}}</div>
 </div>
-
 <div class="row m-2">
   <div class="col-sm-4"> Phone number</div>
   <div class="col-sm-8">{{contact.phone}}</div>
@@ -34,7 +32,7 @@
 </div>
 <div class="row m-2">
   <div class="col-sm-4">Country</div>
-  <div class="col-sm-8">{{contact.state}}</div>
+  <div class="col-sm-8">{{contact.country|uppercase}}</div>
 </div>
 <div class="row m-2">
   <div class="col-sm-4">Gender</div>
@@ -42,5 +40,5 @@
 </div>
 <div class="row m-2">
   <div class="col-sm-4">Date of birth</div>
-  <div class="col-sm-8">{{contact.dob}}</div>
+  <div class="col-sm-8">{{contact.dob| date}}</div>
 </div>

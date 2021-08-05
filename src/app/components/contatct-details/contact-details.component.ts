@@ -27,7 +27,6 @@ export class ContactDetailsComponent implements OnInit {
     this.contact.state = 'mazovian';
     this.contact.dob = '01-01-2000';
     this.contact.gender = 'female';
-    // this.contact = this.service.getContactDetails(1);
   }
 
 }
