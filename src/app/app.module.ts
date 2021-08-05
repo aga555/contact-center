@@ -7,6 +7,7 @@ import {SiderbarComponent} from './components/siderbar/siderbar.component';
 import {ContactDetailsComponent} from './components/contatct-details/contact-details.component';
 import {FullnamePipe} from './pipes/fullname.pipe';
 import {HttpClientModule} from '@angular/common/http';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import {HttpClientModule} from '@angular/common/http';
     SiderbarComponent,
     ContactDetailsComponent,
     FullnamePipe,
+    FooterComponent,
 
   ],
   imports: [
