@@ -15,7 +15,19 @@ export class ContactDetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.contact = this.service.getContactDetails(1);
+    this.contact = new Contact();
+    this.contact.id = 1;
+    this.contact.firstname = 'Agnieszka';
+    this.contact.lastname = 'Krawczyk';
+    this.contact.email = 'aga@gmai.com';
+    this.contact.img = 'https://cdn.pixabay.com/photo/2017/10/26/01/04/woman-2889882_960_720.jpg';
+    this.contact.city = 'Warsaw';
+    this.contact.country = 'Poland';
+    this.contact.phone = '123456456';
+    this.contact.state = 'mazovian';
+    this.contact.dob = '01-01-2000';
+    this.contact.gender = 'female';
+    // this.contact = this.service.getContactDetails(1);
   }
 
 }

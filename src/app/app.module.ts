@@ -6,6 +6,7 @@ import {HomeComponent} from './components/home/home.component';
 import {SiderbarComponent} from './components/siderbar/siderbar.component';
 import {ContactDetailsComponent} from './components/contatct-details/contact-details.component';
 import {FullnamePipe} from './pipes/fullname.pipe';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,10 +15,11 @@ import {FullnamePipe} from './pipes/fullname.pipe';
     HomeComponent,
     SiderbarComponent,
     ContactDetailsComponent,
-    FullnamePipe
+    FullnamePipe,
+
   ],
   imports: [
-    BrowserModule
+    BrowserModule, HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,44 +1,46 @@
-<div class="row">
-  <div class="col"> Firstname</div>
-  <div class="col">
-       {{contact|fullname}} </div>
+<h3>Contact details</h3>
+<hr>
+<div class="row m-2">
+  <div class="col-sm-4"> Firstname</div>
+  <div class="col-sm-8">
+    {{contact|fullname}} </div>
 </div>
 
-<div class="row">
-  <div class="col">Lastname</div>
-  <div class="col">{{contact.lastname}}</div>
+<div class="row m-2">
+  <div class="col-sm-4">Lastname</div>
+  <div class="col-sm-8">{{contact.lastname}}</div>
 </div>
-<div class="row">
-  <div class="col">img</div>
-  <div class="col">
-    <img [src]="contact.img" style="width:100px"> </div>
+<div class="row m-2">
+  <div class="col-sm-4">img</div>
+  <div class="col-sm-8">
+    <img [src]="contact.img" style="width:100px"></div>
 </div>
-<div class="row">
-  <div class="col">E mail adress</div>
-  <div class="col">{{contact.email}}</div>
+<div class="row m-2">
+  <div class="col-sm-4">E mail adress</div>
+  <div class="col-sm-8">{{contact.email}}</div>
 </div>
 
-<div class="row">
-  <div class="col"> Phone number</div>
-  <div class="col">{{contact.phone}}</div>
+<div class="row m-2">
+  <div class="col-sm-4"> Phone number</div>
+  <div class="col-sm-8">{{contact.phone}}</div>
 </div>
-<div class="row">
-  <div class="col">City</div>
-  <div class="col">{{contact.city}}</div>
+<div class="row m-2">
+  <div class="col-sm-4">City</div>
+  <div class="col-sm-8">{{contact.city}}</div>
 </div>
-<div class="row">
-  <div class="col">State</div>
-  <div class="col">{{contact.state}}</div>
+<div class="row m-2">
+  <div class="col-sm-4">State</div>
+  <div class="col-sm-8">{{contact.state}}</div>
 </div>
-<div class="row">
-  <div class="col">Country</div>
-  <div class="col">{{contact.state}}</div>
+<div class="row m-2">
+  <div class="col-sm-4">Country</div>
+  <div class="col-sm-8">{{contact.state}}</div>
 </div>
-<div class="row">
-  <div class="col">Gender</div>
-  <div class="col">{{contact.gender}}</div>
+<div class="row m-2">
+  <div class="col-sm-4">Gender</div>
+  <div class="col-sm-8">{{contact.gender}}</div>
 </div>
-<div class="row">
-  <div class="col">Date of birth</div>
-  <div class="col">{{contact.dob}}</div>
+<div class="row m-2">
+  <div class="col-sm-4">Date of birth</div>
+  <div class="col-sm-8">{{contact.dob}}</div>
 </div>
