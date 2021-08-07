@@ -7,8 +7,29 @@ import {SiderbarComponent} from './components/siderbar/siderbar.component';
 import {ContactDetailsComponent} from './components/contatct-details/contact-details.component';
 import {FullnamePipe} from './pipes/fullname.pipe';
 import {HttpClientModule} from '@angular/common/http';
-import { FooterComponent } from './components/footer/footer.component';
-import { ListContactsComponent } from './components/list-contacts/list-contacts.component';
+import {FooterComponent} from './components/footer/footer.component';
+import {ListContactsComponent} from './components/list-contacts/list-contacts.component';
+import {RouterModule, Routes} from '@angular/router';
+
+const routes: Routes = [
+  {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'home'
+  },
+  {
+    path: 'home',
+    component: HomeComponent
+  }, {
+    path: 'list',
+    component: ListContactsComponent,
+  },
+  {
+    path: 'contact-details',
+    component: ContactDetailsComponent,
+  },
+
+];
 
 @NgModule({
   declarations: [
@@ -23,7 +44,7 @@ import { ListContactsComponent } from './components/list-contacts/list-contacts.
 
   ],
   imports: [
-    BrowserModule, HttpClientModule
+    BrowserModule, HttpClientModule, RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
