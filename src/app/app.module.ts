@@ -10,26 +10,8 @@ import {HttpClientModule} from '@angular/common/http';
 import {FooterComponent} from './components/footer/footer.component';
 import {ListContactsComponent} from './components/list-contacts/list-contacts.component';
 import {RouterModule, Routes} from '@angular/router';
+import {AppRoutingModule} from './app-routing.module';
 
-const routes: Routes = [
-  {
-    path: '',
-    pathMatch: 'full',
-    redirectTo: 'home'
-  },
-  {
-    path: 'home',
-    component: HomeComponent
-  }, {
-    path: 'list',
-    component: ListContactsComponent,
-  },
-  {
-    path: 'contact-details',
-    component: ContactDetailsComponent,
-  },
-
-];
 
 @NgModule({
   declarations: [
@@ -44,7 +26,7 @@ const routes: Routes = [
 
   ],
   imports: [
-    BrowserModule, HttpClientModule, RouterModule.forRoot(routes)
+    BrowserModule, HttpClientModule, AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
