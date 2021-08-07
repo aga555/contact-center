@@ -18,7 +18,7 @@ const routes: Routes = [
     component: ListContactsComponent,
   },
   {
-    path: 'contact-details',
+    path: 'contact-details/:id',
     component: ContactDetailsComponent,
   },
 
