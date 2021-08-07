@@ -8,6 +8,7 @@ import {ContactDetailsComponent} from './components/contatct-details/contact-det
 import {FullnamePipe} from './pipes/fullname.pipe';
 import {HttpClientModule} from '@angular/common/http';
 import { FooterComponent } from './components/footer/footer.component';
+import { ListContactsComponent } from './components/list-contacts/list-contacts.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { FooterComponent } from './components/footer/footer.component';
     ContactDetailsComponent,
     FullnamePipe,
     FooterComponent,
+    ListContactsComponent,
 
   ],
   imports: [
