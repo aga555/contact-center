@@ -1,7 +1,7 @@
 <h3>Contact details</h3>
 <hr>
 <div class="row m-2">
-    <img [src]="contact.img" style="width:200px">
+  <img [src]="contact.img" style="width:200px">
 </div>
 <div class="row m-2">
   <div class="col-sm-4"> Firstname</div>
@@ -41,3 +41,7 @@
   <div class="col-sm-4">Date of birth</div>
   <div class="col-sm-8">{{contact.dob| date}}</div>
 </div>
+<div class="row">
+  <button class="btn-danger btn"(click)="deleteContact()">Delete</button>
+</div>
+

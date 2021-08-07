@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Contact} from '../../model/contact';
 import {ContactService} from '../../services/contact.service';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-contatct-details',
@@ -12,7 +12,7 @@ export class ContactDetailsComponent implements OnInit {
 
   contact: Contact = new Contact();
 
-  constructor(private  service: ContactService, private activatedRoute: ActivatedRoute) {
+  constructor(private  service: ContactService, private activatedRoute: ActivatedRoute, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -23,6 +23,16 @@ export class ContactDetailsComponent implements OnInit {
         }
       );
     });
+  }
+
+  deleteContact() {
+    if (!confirm('Are you sure')) {
+      return;
+    }
+    this.service.deleteContact(this.contact.id)
+      .subscribe(() => {
+        this.router.navigate(['/list']);
+      });
   }
 
 }
