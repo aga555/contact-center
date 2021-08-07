@@ -15,7 +15,7 @@ export class ContactDetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.service.getContactDetails(3).subscribe(
+    this.service.getContactDetails(5).subscribe(
       data => {
         console.log(data);
         this.contact = data;
