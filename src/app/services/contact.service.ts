@@ -2,7 +2,8 @@ import {Injectable} from '@angular/core';
 import {Contact} from '../model/contact';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import 'rxjs/add/operator/map';
+
+import {map} from 'rxjs/operators';
 
 const baseUrl = 'http://localhost:4300/contacts/';
 
@@ -15,18 +16,19 @@ export class ContactService {
   }
 
   getContactDetails(id: number): Observable<Contact> {
-    return this.http.get(baseUrl + id)
-      .map(data => data as Contact);
+    return this.http.get(baseUrl + id).pipe(
+      map(data => data as Contact));
   }
 
   addNewContact(contact: Contact): Observable<Contact> {
-    return this.http.post(baseUrl, contact).map(
+    return this.http.post(baseUrl, contact).pipe(map(
       data => data as Contact
-    );
+    ));
   }
 
   updateContact(contact: Contact): Observable<Contact> {
-    return this.http.put(baseUrl + contact.id, contact).map(data => data as Contact);
+    return this.http.put(baseUrl + contact.id, contact)
+      .pipe(map(data => data as Contact));
   }
 
   deleteContact(id: number): Observable<any> {
@@ -37,7 +39,7 @@ export class ContactService {
     const params = {
       _page: '' + pageNumber
     };
-    return this.http.get(baseUrl, {params}).map(data => data as Contact[]);
+    return this.http.get(baseUrl, {params}).pipe(map(data => data as Contact[]));
   }
 
 }
