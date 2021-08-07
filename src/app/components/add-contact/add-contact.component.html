@@ -1,54 +1,95 @@
 <h3> Add new contact</h3>
-<form class="form">
-  <div class="form-group">
+<form class="form" #form1="ngForm">
+
+  <div class="form-group col-sm-8" >
     <label for="firstName">First name</label>
-    <input type="text" class="form-control" id="firstName" name="firstname" [(ngModel)]="contact.firstname">
+    <input type="text" class="form-control" id="firstName" name="firstname" #firstname="ngModel"
+           required maxlength="15" minlength="3"
+           [(ngModel)]="contact.firstname">
+    <div class="small alert-danger" *ngIf="form1.dirty && firstname.invalid">
+      <div *ngIf="firstname.errors['required']">Firstname is required</div>
+      <div>Please enter at least 3 letters</div>
+    </div>
   </div>
-  <div class="form-group">
+
+  <div class="form-group col-sm-8">
     <label for="lastname">Last name</label>
-    <input type="text" class="form-control" id="lastname" name="lastname" [(ngModel)]="contact.lastname">
+    <input type="text" class="form-control" id="lastname" name="lastname" [(ngModel)]="contact.lastname"
+           #lastname="ngModel"
+           required maxlength="15" minlength="3">
+    <div class="small alert-danger" *ngIf="form1.dirty && lastname.invalid">
+      <div *ngIf="lastname.errors['required']">Lastname is required</div>
+      <div>Please enter at least 3 letters</div>
+    </div>
   </div>
-  <div class="form-group">
+
+  <div class="form-group col-sm-8">
     <div class="form-check form-check-inline">
-      <input class="form-check-input" type="radio" name="gender" id="genderMale" value="Male"
-             checked [(ngModel)]="contact.gender"
-      >
+      <input class="form-check-input" type="radio" name="gender" id="genderMale" value="Male" checked
+             [(ngModel)]="contact.gender">
       <label class="form-check-label" for="genderMale">Male</label>
     </div>
     <div class="form-check form-check-inline">
       <input class="form-check-input" type="radio" name="gender" id="genderFemale" value="Female"
-             [(ngModel)]="contact.gender"
-      >
+             [(ngModel)]="contact.gender">
       <label class="form-check-label" for="genderFemale">Female</label>
     </div>
   </div>
-  <div class="form-group">
+
+  <div class="form-group col-sm-8">
     <label for="email">email</label>
     <input type="email" class="form-control" id="email" name="email" [(ngModel)]="contact.email">
   </div>
-  <div class="form-group">
+
+  <div class="form-group col-sm-8">
     <label for="phone">phone</label>
-    <input type="text" class="form-control" id="phone" name="phone" [(ngModel)]="contact.phone">
+    <input type="text" class="form-control" id="phone" name="phone" [(ngModel)]="contact.phone" #phone="ngModel"
+           required pattern="\d{10,12}">
+    <div class="small alert-danger" *ngIf="form1.dirty && phone.invalid">
+      <div  *ngIf="phone.errors['required']">Phone is required</div>
+      <div *ngIf="phone.errors['pattern']">Valid phone number contains 10 to 12 numbers </div>
+    </div>
   </div>
-  <div class="form-group">
+
+  <div class="form-group col-sm-8">
     <label for="dob">Date of birth</label>
     <input type="data" class="form-control" id="dob" name="dob" [(ngModel)]="contact.dob">
   </div>
-  <div class="form-group">
+
+  <div class="form-group col-sm-8">
     <label for="img">img</label>
     <input type="text" class="form-control" id="img" name="img" [(ngModel)]="contact.img">
   </div>
-  <div class="form-group">
+
+  <div class="form-group col-sm-8">
     <label for="city">city</label>
-    <input type="text" class="form-control" id="city" name="city" [(ngModel)]="contact.city">
+    <input type="text" class="form-control" id="city" name="city" [(ngModel)]="contact.city" #city="ngModel"
+           required maxlength="15" minlength="3">
+    <div class="small alert-danger" *ngIf="form1.dirty && city.invalid">
+      <div *ngIf="city.errors['required']">City is required</div>
+      <div>Please enter at least 3 letters</div>
+    </div>
   </div>
-  <div class="form-group">
+
+  <div class="form-group col-sm-8">
     <label for="country">country</label>
-    <input type="text" class="form-control" id="country" name="country" [(ngModel)]="contact.country">
+    <input type="text" class="form-control" id="country" name="country" [(ngModel)]="contact.country"
+           #country="ngModel"
+           required maxlength="15" minlength="3">
+    <div class="small alert-danger" *ngIf="form1.dirty && country.invalid">
+      <div *ngIf="country.errors['required']">Country required</div>
+      <div>Please enter at least 3 letters</div>
+    </div>
   </div>
-  <div class="form-group">
+
+  <div class="form-group col-sm-8">
     <label for="state">state</label>
     <input type="text" class="form-control" id="state" name="state" [(ngModel)]="contact.state">
   </div>
+  <button class="btn"
+          [ngClass]="form1.invalid ?'btn-danger':'btn-success' "
+          (click)="addContact()"
+          [disabled]="form1.invalid"> save
+  </button>
 </form>
-<button class="btn btn-success" (click)="addContact()"> save</button>
+
