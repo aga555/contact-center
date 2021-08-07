@@ -86,10 +86,12 @@
     <label for="state">state</label>
     <input type="text" class="form-control" id="state" name="state" [(ngModel)]="contact.state">
   </div>
+
   <button class="btn"
           [ngClass]="form1.invalid ?'btn-danger':'btn-success' "
           (click)="addContact()"
           [disabled]="form1.invalid"> save
   </button>
+
 </form>
 
