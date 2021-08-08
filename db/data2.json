@@ -213,10 +213,10 @@
       "email": "bgatlandh@reference.com",
       "phone": "304-146-7082",
       "dob": "9/8/1982",
-      "img": "http://dummyimage.com/124x100.png/cc0000/ffffff",
+      "img": "https://images.unsplash.com/photo-1628155190558-bb916e76752b?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNDJ8fHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
       "city": "Charleston",
-      "state": "West Virginia",
-      "country": "USA"
+      "country": "USA",
+      "state": "West Virginia"
     },
     {
       "id": 19,
