@@ -3,11 +3,19 @@
   <div class="form-group col-sm-8 ">
     <label>First name</label>
     <input class="form-control" formControlName="firstname">
+    <div class="alert-danger" *ngIf="contactFormEdit.controls['firstname'].invalid && contactFormEdit.dirty">
+      <div *ngIf="contactFormEdit.controls['firstname'].errors.required">Firstname is mandatory</div>
+      <div>Required min length3 and max lenght 15</div>
+    </div>
   </div>
 
   <div class="form-group col-sm-8">
     <label> Last name</label>
     <input class="form-control" formControlName="lastname">
+    <div class="alert-danger" *ngIf="contactFormEdit.controls['lastname'].invalid && contactFormEdit.dirty">
+      <div *ngIf="contactFormEdit.controls['lastname'].errors.required">Lastname is mandatory</div>
+      <div>Required min length3 and max lenght 15</div>
+    </div>
   </div>
 
   <div class="form-group col-sm-8">
@@ -33,6 +41,10 @@
   <div class="form-group col-sm-8">
     <label>phone</label>
     <input class="form-control" formControlName="phone">
+    <div class="alert-danger" *ngIf="contactFormEdit.controls['phone'].invalid && contactFormEdit.dirty">
+      <div *ngIf="contactFormEdit.controls['phone'].errors.required">Phone is mandatory</div>
+      <div>Required min length 10 and max lenght 12</div>
+    </div>
   </div>
 
   <div class="form-group col-sm-8">
@@ -53,13 +65,28 @@
   <div class="form-group col-sm-8">
     <label>country</label>
     <input class="form-control" formControlName="country">
+    <div class="alert-danger" *ngIf="contactFormEdit.controls['country'].invalid && contactFormEdit.dirty">
+      <div *ngIf="contactFormEdit.controls['country'].errors.required">Lastname is mandatory</div>
+      <div>Required min length3 and max lenght 15</div>
+    </div>
   </div>
 
   <div class="form-group col-sm-8">
     <label>state</label>
     <input class="form-control" formControlName="state">
   </div>
-  <button class="btn btn-success" (click)="saveChanges()">save changes</button>
+
+    <div class="col-sm-8 d-flex justify-content-between">
+      <button class="btn"
+              [ngClass]="contactFormEdit.valid? 'btn-success': 'btn-danger'"
+              [disabled]="contactFormEdit.invalid"
+              (click)="saveChanges()">save changes
+      </button>
+      <button class="btn btn-info"
+              (click)="cancel()">cancel
+      </button>
+    </div>
+
 </form>
 
 
