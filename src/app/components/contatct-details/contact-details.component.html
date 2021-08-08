@@ -41,7 +41,12 @@
   <div class="col-sm-4">Date of birth</div>
   <div class="col-sm-8">{{contact.dob| date}}</div>
 </div>
-<div class="row">
-  <button class="btn-danger btn"(click)="deleteContact()">Delete</button>
+<div class="row m-2">
+  <div class="col-sm-4">
+    <button class="btn-danger btn" (click)="deleteContact()">Delete</button>
+  </div>
+  <div class="col-sm-8">  <button class="btn-info btn" [routerLink]="['/edit-contact',contact.id]">Edit</button>
+  </div>
+
 </div>
 

@@ -101,7 +101,8 @@
       "dob": "8/20/1996",
       "img": "https://images.unsplash.com/photo-1500522144261-ea64433bbe27?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjF8fHdvbWVufGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
       "city": "Paris La Défense",
-      "state": "Île-de-France"
+      "state": "Île-de-France",
+      "country": "USA"
     },
     {
       "id": 9,
@@ -113,7 +114,8 @@
       "dob": "3/5/1985",
       "img": "https://images.unsplash.com/photo-1508341591423-4347099e1f19?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8bWVufGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
       "city": "Lefkoniko",
-      "state": null
+      "country": "USA",
+      "state": "East Rockaway"
     },
     {
       "id": 10,

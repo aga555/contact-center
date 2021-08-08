@@ -9,10 +9,10 @@ import {FullnamePipe} from './pipes/fullname.pipe';
 import {HttpClientModule} from '@angular/common/http';
 import {FooterComponent} from './components/footer/footer.component';
 import {ListContactsComponent} from './components/list-contacts/list-contacts.component';
-import {RouterModule, Routes} from '@angular/router';
 import {AppRoutingModule} from './app-routing.module';
-import { AddContactComponent } from './components/add-contact/add-contact.component';
-import {FormsModule} from '@angular/forms';
+import {AddContactComponent} from './components/add-contact/add-contact.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {EditContactComponent} from './components/edit-contact/edit-contact.component';
 
 
 @NgModule({
@@ -26,10 +26,11 @@ import {FormsModule} from '@angular/forms';
     FooterComponent,
     ListContactsComponent,
     AddContactComponent,
+    EditContactComponent,
 
   ],
   imports: [
-    BrowserModule, HttpClientModule, AppRoutingModule,FormsModule
+    BrowserModule, HttpClientModule, AppRoutingModule, FormsModule, ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
