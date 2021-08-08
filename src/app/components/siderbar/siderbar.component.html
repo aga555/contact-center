@@ -1,6 +1,17 @@
-<div class="alert alert-warning full-height">
-  <button class="btn btn-primary btn-block" [routerLink]="['/home']">Home</button>
-  <button class="btn btn-primary btn-block" [routerLink]="['/list']">Contact List</button>
-  <button class="btn btn-primary btn-block" [routerLink]="['/add-contact']">Add new contact</button>
-
+<div id="wrapper">
+  <!-- Sidebar -->
+  <div id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+      <li class="sidebar-brand">
+        <a [routerLink]="['/home']">Home
+        </a>
+      </li>
+      <li>
+        <a [routerLink]="['/list']">Contact List</a>
+      </li>
+      <li>
+        <a [routerLink]="['/add-contact']">Add new contact</a>
+      </li>
+    </ul>
+  </div>
 </div>
