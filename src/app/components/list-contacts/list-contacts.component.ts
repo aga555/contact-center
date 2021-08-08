@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Contact} from '../../model/contact';
 import {ContactService} from '../../services/contact.service';
+declare var $: any;
 
 @Component({
   selector: 'app-list-contacts',
@@ -10,7 +11,7 @@ import {ContactService} from '../../services/contact.service';
 export class ListContactsComponent implements OnInit {
 
   contacts: Contact[];
-  pageNumb: number = 1;
+  pageNumb = 1;
 
   constructor(private service: ContactService) {
   }
@@ -18,6 +19,14 @@ export class ListContactsComponent implements OnInit {
   ngOnInit(): void {
     this.service.getAllContacts()
       .subscribe(data => this.contacts = data);
+
+    $(window).scroll(() => {
+      const w = $(window);
+      const d = $(document);
+      if (w.height() + w.scrollTop() === d.height()){
+        this.loadMoreContacts();
+      }
+    });
   }
 
   loadMoreContacts() {
