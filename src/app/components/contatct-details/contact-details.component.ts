@@ -3,6 +3,8 @@ import {Contact} from '../../model/contact';
 import {ContactService} from '../../services/contact.service';
 import {ActivatedRoute, Router} from '@angular/router';
 
+const swal = window ['swal'];
+
 @Component({
   selector: 'app-contatct-details',
   templateUrl: './contact-details.component.html',
@@ -26,13 +28,31 @@ export class ContactDetailsComponent implements OnInit {
   }
 
   deleteContact() {
-    if (!confirm('Are you sure')) {
-      return;
-    }
-    this.service.deleteContact(this.contact.id)
-      .subscribe(() => {
-        this.router.navigate(['/list']);
+    swal({
+        title: 'Are you sure about delete this contact?',
+        text: 'Please confirm',
+        icon: 'warning',
+        buttons: [
+          {
+            text: 'Yes',
+            visible: true,
+            value: true
+          },
+          {
+            text: 'No',
+            visible: true,
+            value: false
+          }
+        ]
+      }
+    )
+      .then(result => {
+        if (result === true) {
+          this.service.deleteContact(this.contact.id)
+            .subscribe(() => {
+              this.router.navigate(['/list']);
+            });
+        }
       });
   }
-
 }
